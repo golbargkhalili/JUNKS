@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+}
+
+body {
+  overflow: hidden;
+  background: #000000;
+  font-family: Impact, Haettenschweiler, sans-serif, sans-serif;
+}
+
+h1 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 4rem;
+  z-index: 10;
+  filter: drop-shadow(1px 1px 20px rgb(0, 0, 0));
+}
+
+p {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  font-weight: 500;
+  z-index: 10;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  filter: drop-shadow(1px 1px 1px rgb(0, 0, 0));
+}
+
+.star{
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 1.9rem;
+  font-weight: 500;
+  z-index: 10;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  filter: drop-shadow(1px 1px 1px rgb(0, 0, 0));
+  
+}
+.star:hover {
+  transform: scale(1.2);
+  opacity: 1;
+  transform: translateY(-10%) scale(1);
+  z-index: 10000;
+}
+
+
+#viewport {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  overflow: hidden;
+  cursor: all-scroll;
+}
+
+
+#world {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  right: 20%;
+  bottom: 20%;
+  will-change: transform;
+}
+
+
+.tile {
+  position: absolute;
+  width: 2200px;
+  height: 2200px;
+}
+
+.item {
+  position: absolute;
+  overflow: visible;
+  z-index: 1;
+
+  width: 200px;
+  height: 200px;
+
+  background: rgba(255, 0, 0, 0);
+  color: rgb(255, 255, 255);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+
+  border-radius: 16px;
+  transition: transform 0.2s;
+}
+
+.item:hover {
+  transform: scale(1.05);
+   opacity: 1;
+  transform: translateY(-10%) scale(1);
+  z-index: 10000;
+}
+
+.tooltip {
+   position: absolute;
+  top: 50%;
+  left: 10%; 
+  transform: translateY(-50%) scale(0.95);
+
+  width: 200px;
+  padding: 8px;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 5;
+  font-size: 12px;
+
+  background: rgba(0, 0, 0, 0.698);
+  color: white;
+  border-radius: 10px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.item:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
