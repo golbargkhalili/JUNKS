@@ -75,6 +75,7 @@ window.addEventListener("mouseup", () => {
 });
 
 viewport.addEventListener("touchstart", e => {
+  isDragging = true;
   const touch = e.touches[0];
   startX = touch.clientX;
   startY = touch.clientY;
