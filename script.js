@@ -1,3 +1,5 @@
+
+// DEFINING
 const viewport = document.getElementById("viewport");
 const world = document.getElementById("world");
 const template = document.getElementById("template");
@@ -25,6 +27,8 @@ function positionItems(dadash) {
     item.style.right = x + "px";
   });
 }
+
+// REPETITION
 
 positionItems(template);
 
@@ -56,10 +60,9 @@ let isDragging = false;
 let startX = 0;
 let startY = 0;
 
+// USER INTERFACE
 
 viewport.addEventListener("mousedown", e => {
-
-  // isDragging = false;
 
   startX = e.clientX;
   startY = e.clientY;
@@ -98,6 +101,7 @@ viewport.addEventListener("touchend", () => {
   isDragging = false;
 });
 
+// SCROLLING AND CLONING MATHS
 
 viewport.addEventListener("wheel", e => {
 
