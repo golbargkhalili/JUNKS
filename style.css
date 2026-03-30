@@ -52,6 +52,35 @@ p {
   transform: translateY(-10%) scale(1);
   z-index: 10000;
 }
+.tooltip2 {
+   position: absolute;
+  top: 200%;
+  transform: translateY(-50%) scale(0.95);
+
+  width: 70px;
+  padding: 8px;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 5;
+  font-size: 12px;
+
+  background: rgba(0, 0, 0, 0.698);
+  color: white;
+  border-radius: 10px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+.star:hover .tooltip2 {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  z-index: 10000;
+}
 
 
 #viewport {
@@ -70,6 +99,7 @@ p {
   right: 20%;
   bottom: 20%;
   will-change: transform;
+  transform-origin: center;
 }
 
 

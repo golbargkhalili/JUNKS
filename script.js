@@ -23,8 +23,6 @@ function positionItems(dadash) {
 
     item.style.left = x + "px";
     item.style.top = y + "px";
-    item.style.bottom = y + "px";
-    item.style.right = x + "px";
   });
 }
 
@@ -34,8 +32,7 @@ positionItems(template);
 
 template.style.left = TILE_SIZE + "px";
 template.style.top = TILE_SIZE + "px";
-template.style.bottom = TILE_SIZE + "px";
-template.style.right = TILE_SIZE + "px";
+
 
 
 for (let y = 0; y < GRID; y++) {
@@ -47,8 +44,7 @@ for (let y = 0; y < GRID; y++) {
 
     clone.style.left = x * TILE_SIZE + "px";
     clone.style.top = y * TILE_SIZE + "px";
-    clone.style.bottom = y * TILE_SIZE + "px";
-    clone.style.right = x * TILE_SIZE + "px";
+
 
     positionItems(clone);
 
@@ -129,9 +125,13 @@ function animate() {
   posX += (targetX - posX) * SPEED;
   posY += (targetY - posY) * SPEED;
 
-  world.style.transform = `translate(calc(-50% + ${posX}px), calc(-50% + ${posY}px))`;
+  const scale = Math.min(window.innerWidth / 100, 1); 
+
+  world.style.transform = `
+    translate(calc(-50% + ${posX}px), calc(-50% + ${posY}px))
+    scale(${scale})
+  `;
 
   requestAnimationFrame(animate);
 }
-
 animate();
