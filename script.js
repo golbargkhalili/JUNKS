@@ -125,7 +125,11 @@ function animate() {
   posX += (targetX - posX) * SPEED;
   posY += (targetY - posY) * SPEED;
 
-  const scale = Math.min(window.innerWidth / 100, 1); 
+  let scale = 1;
+
+if (window.innerWidth < 1000) {
+  scale = 1000 / window.innerWidth;
+}
 
   world.style.transform = `
     translate(calc(-50% + ${posX}px), calc(-50% + ${posY}px))
